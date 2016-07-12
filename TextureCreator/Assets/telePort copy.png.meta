@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 6d0c78ce402514348825e44092bec3cf
+timeCreated: 1468316654
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: telePort copy_0
+    21300002: telePort copy_1
+    21300004: telePort copy_2
+    21300006: telePort copy_3
+    21300008: telePort copy_4
+    21300010: telePort copy_5
+    21300012: telePort copy_6
+    21300014: telePort copy_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: 5
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: telePort copy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -50}
+        - {x: 28, y: -50}
+        - {x: 28, y: 47}
+        - {x: -28, y: 47}
+    - name: telePort copy_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 100
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 50}
+        - {x: -24, y: 50}
+        - {x: -28, y: 47}
+        - {x: -28, y: -50}
+        - {x: 28, y: -50}
+        - {x: 28, y: 21}
+        - {x: 26, y: 46}
+    - name: telePort copy_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 100
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -50}
+        - {x: 28, y: -50}
+        - {x: 28, y: 47}
+        - {x: -28, y: 47}
+    - name: telePort copy_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 100
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -50}
+        - {x: 28, y: -50}
+        - {x: 28, y: 47}
+        - {x: -28, y: 47}
+    - name: telePort copy_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -50}
+        - {x: 24, y: -50}
+        - {x: 27, y: -47}
+        - {x: 27, y: 41}
+        - {x: -28, y: 41}
+      - - {x: -28, y: 50}
+        - {x: -28, y: 47}
+        - {x: 28, y: 47}
+        - {x: 28, y: 50}
+    - name: telePort copy_5
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 45}
+        - {x: -21, y: 45}
+        - {x: -28, y: 41}
+        - {x: -28, y: -50}
+        - {x: 25, y: -50}
+        - {x: 28, y: -32}
+        - {x: 28, y: 24}
+        - {x: 27, y: 41}
+      - - {x: -28, y: 50}
+        - {x: -28, y: 47}
+        - {x: 28, y: 47}
+        - {x: 28, y: 50}
+    - name: telePort copy_6
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -50}
+        - {x: 24, y: -50}
+        - {x: 28, y: -40}
+        - {x: 28, y: 41}
+        - {x: -28, y: 41}
+      - - {x: -28, y: 50}
+        - {x: -28, y: 47}
+        - {x: 28, y: 47}
+        - {x: 28, y: 50}
+    - name: telePort copy_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: -50}
+        - {x: 25, y: -50}
+        - {x: 28, y: -48}
+        - {x: 28, y: 41}
+        - {x: -28, y: 41}
+      - - {x: -28, y: 50}
+        - {x: -28, y: 47}
+        - {x: 28, y: 47}
+        - {x: 28, y: 50}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

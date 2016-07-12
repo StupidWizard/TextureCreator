@@ -1,0 +1,212 @@
+fileFormatVersion: 2
+guid: 7c1fedb1c3ddc40e4900e889c7d98e7d
+timeCreated: 1468316679
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rot_90_0
+    21300002: rot_90_1
+    21300004: rot_90_2
+    21300006: rot_90_3
+    21300008: rot_90_4
+    21300010: rot_90_5
+    21300012: rot_90_6
+    21300014: rot_90_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: 5
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rot_90_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 28}
+        - {x: -46, y: 26}
+        - {x: -47, y: 22}
+        - {x: -47, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 28}
+    - name: rot_90_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 56
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 28}
+        - {x: -46, y: 26}
+        - {x: -50, y: 7}
+        - {x: -50, y: -24}
+        - {x: -47, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 28}
+    - name: rot_90_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 56
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 28}
+        - {x: -47, y: 24}
+        - {x: -47, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 28}
+    - name: rot_90_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 56
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 28}
+        - {x: -47, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 28}
+    - name: rot_90_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: -28}
+        - {x: -47, y: 28}
+        - {x: -50, y: 28}
+        - {x: -50, y: -28}
+      - - {x: -41, y: 27}
+        - {x: -41, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 24}
+        - {x: 47, y: 27}
+    - name: rot_90_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: -28}
+        - {x: -47, y: 28}
+        - {x: -50, y: 28}
+        - {x: -50, y: -28}
+      - - {x: -45, y: 28}
+        - {x: -45, y: -22}
+        - {x: -43, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 28}
+    - name: rot_90_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: -28}
+        - {x: -47, y: 28}
+        - {x: -50, y: 28}
+        - {x: -50, y: -28}
+      - - {x: -16, y: 28}
+        - {x: -41, y: 24}
+        - {x: -41, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 25}
+        - {x: 34, y: 28}
+    - name: rot_90_7
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: -28}
+        - {x: -47, y: 28}
+        - {x: -50, y: 28}
+        - {x: -50, y: -28}
+      - - {x: -41, y: 28}
+        - {x: -41, y: -28}
+        - {x: 50, y: -28}
+        - {x: 50, y: 25}
+        - {x: 48, y: 28}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
