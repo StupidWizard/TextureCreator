@@ -441,8 +441,8 @@ MonoBehaviour:
   flipY: 1
   nameOut: rot_90
   paddingLeft: 0
-  paddingRight: -1
-  paddingTop: -1
+  paddingRight: 10
+  paddingTop: 20
   paddingBotton: 0
 --- !u!114 &1056995214
 MonoBehaviour:
