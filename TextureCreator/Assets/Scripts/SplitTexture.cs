@@ -114,7 +114,36 @@ public class SplitTexture : MonoBehaviour {
 
 	}
 		
+	[ContextMenu("Flip Image")]
 	void FlipAllFrame() {
+
+		Vec2Int size = new Vec2Int (originTexture.width / nCol, originTexture.height / nRow);
+		Debug.LogError("Size cell = (" + size.x + ", " + size.y + ")");
+
+		int width = originTexture.width;
+		int height = originTexture.height;
+
+		Texture2D targetTexture = new Texture2D(width, height);
+		Vec2Int sizeTarget = new Vec2Int(targetTexture.width / nCol, targetTexture.height / nCol);
+
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
+				targetTexture.SetPixel(i, j, Color.clear);
+			}
+		}
+
+		for (int i = 0; i < nCol; i++) {
+			for (int j = 0; j < nRow; j++) {
+				// cell[j, i]
+				Vec2Int oriO = new Vec2Int(i * size.x, j * size.y);
+				Vec2Int tarO = new Vec2Int(i * sizeTarget.x, j * sizeTarget.y);
+				CopyPixels(originTexture, targetTexture, oriO, tarO, size, flipX, flipY);
+			}
+		}
+
+		string pathSave = System.IO.Path.Combine(Application.dataPath, nameOut + ".png");
+
+		System.IO.File.WriteAllBytes(pathSave, targetTexture.EncodeToPNG());
 	}
 
 
@@ -132,7 +161,7 @@ public class SplitTexture : MonoBehaviour {
 		Vec2Int tarSize = new Vec2Int(targetData.endPoint.x - targetData.startPoint.x + 1, targetData.endPoint.y - targetData.startPoint.y + 1);
 
 		int ORI_Y_MAX = origin.height - 1;
-		int TAR_Y_MAX = target.height - 1;
+		int TAR_Y_MAX = target.height - 1 - targetData.startPoint.y;
 
 		for (int dX = 0; dX < oriSize.x; dX++) {
 			for (int dY = 0; dY < oriSize.y; dY++) {
@@ -148,6 +177,8 @@ public class SplitTexture : MonoBehaviour {
 				}
 			}
 		}
+
+		target.Apply();
 	}
 
 
@@ -202,12 +233,14 @@ public class SplitTexture : MonoBehaviour {
 			}
 			break;
 		}
+
+		target.Apply();
 	}
 
 
 	void CopyPixels(Texture2D origin, Texture2D target, Vec2Int originO, Vec2Int targetO, Vec2Int size, bool flipX, bool flipY) {
 		int ORI_Y_MAX = origin.height - 1;
-		int TAR_Y_MAX = target.height - 1;
+		int TAR_Y_MAX = target.height - 1 - targetO.y;
 
 		if (flipX) {
 			if (flipY) {
@@ -242,5 +275,7 @@ public class SplitTexture : MonoBehaviour {
 				}
 			}
 		}
+
+		target.Apply();
 	}
 }
