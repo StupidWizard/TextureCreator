@@ -63,6 +63,17 @@ public class SplitTexture : MonoBehaviour {
 	[SerializeField]
 	string nameOut;
 
+	[SerializeField]
+	int paddingLeft;
+
+	[SerializeField]
+	int paddingRight;
+
+	[SerializeField]
+	int paddingTop;
+
+	[SerializeField]
+	int paddingBotton;
 
 	// Use this for initialization
 	void Start () {
@@ -147,6 +158,43 @@ public class SplitTexture : MonoBehaviour {
 	}
 
 
+	[ContextMenu("ExtendImage")]
+	void ExtendFrame() {
+		Vec2Int size = new Vec2Int (originTexture.width / nCol, originTexture.height / nRow);
+		Debug.LogError("Size cell = (" + size.x + ", " + size.y + ")");
+
+
+
+		Vec2Int sizeTarget = new Vec2Int(size.x + paddingLeft + paddingRight, size.y + paddingTop + paddingBotton);
+		Texture2D targetTexture = new Texture2D(sizeTarget.x * nCol, sizeTarget.y * nRow);
+
+		int width = targetTexture.width;
+		int height = targetTexture.height;
+
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
+				targetTexture.SetPixel(i, j, Color.clear);
+			}
+		}
+
+		Vec2Int offset = new Vec2Int(paddingLeft, paddingTop);
+		for (int i = 0; i < nCol; i++) {
+			for (int j = 0; j < nRow; j++) {
+				// cell[j, i]
+				Vec2Int oriO = new Vec2Int(i * size.x, j * size.y);
+				Vec2Int tarO = new Vec2Int(i * sizeTarget.x, j * sizeTarget.y);
+				Cell oriData = new Cell(oriO, new Vec2Int(oriO.x + size.x - 1, oriO.y + size.y - 1));
+				Cell tarData = new Cell(tarO, new Vec2Int(tarO.x + sizeTarget.x - 1, tarO.y + sizeTarget.y - 1));
+				CopyPixels(originTexture, oriData,
+					targetTexture, tarData, offset);
+			}
+		}
+
+		string pathSave = System.IO.Path.Combine(Application.dataPath, nameOut + ".png");
+
+		System.IO.File.WriteAllBytes(pathSave, targetTexture.EncodeToPNG());
+	}
+
 	/// <summary>
 	/// Copies pixels from 1 cell of origin to 1 cell of target. offset is pos(O) of target - pos(O) of origin.
 	/// </summary>
@@ -161,7 +209,7 @@ public class SplitTexture : MonoBehaviour {
 		Vec2Int tarSize = new Vec2Int(targetData.endPoint.x - targetData.startPoint.x + 1, targetData.endPoint.y - targetData.startPoint.y + 1);
 
 		int ORI_Y_MAX = origin.height - 1;
-		int TAR_Y_MAX = target.height - 1 - targetData.startPoint.y;
+		int TAR_Y_MAX = target.height - 1;
 
 		for (int dX = 0; dX < oriSize.x; dX++) {
 			for (int dY = 0; dY < oriSize.y; dY++) {

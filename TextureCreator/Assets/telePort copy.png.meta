@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6d0c78ce402514348825e44092bec3cf
-timeCreated: 1468316654
+timeCreated: 1468400850
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -46,7 +46,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,13 +84,10 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 7, y: 50}
-        - {x: -24, y: 50}
-        - {x: -28, y: 47}
+      - - {x: -28, y: 50}
         - {x: -28, y: -50}
         - {x: 28, y: -50}
-        - {x: 28, y: 21}
-        - {x: 26, y: 46}
+        - {x: 28, y: 50}
     - name: telePort copy_2
       rect:
         serializedVersion: 2
