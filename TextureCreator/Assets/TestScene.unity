@@ -439,7 +439,7 @@ MonoBehaviour:
   rotType: 1
   flipX: 0
   flipY: 1
-  nameOut: rot_90
+  nameOut: teleport_cell
   paddingLeft: 0
   paddingRight: 10
   paddingTop: 20
