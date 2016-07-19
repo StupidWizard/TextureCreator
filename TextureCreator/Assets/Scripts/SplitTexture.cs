@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public enum Rotate {
@@ -76,14 +77,66 @@ public class SplitTexture : MonoBehaviour {
 	[SerializeField]
 	int paddingBotton;
 
+	[SerializeField]
+	int numberCellDigit = 3;
+
+	[SerializeField]
+	string nameInBase;
+
+	[SerializeField]
+	Texture2D[] listTextureIn;
+
+
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+
+	[ContextMenu("Load Cell Texture Input")]
+	void LoadCellTextureInput() {
+		if (nCol * nRow <= 0) {
+			return;
+		}
+
+		listTextureIn = new Texture2D[nCol * nRow];
+		for (int i = 0; i < nCol; i++) {
+			for (int j = 0; j < nRow; j++) {
+				string path = NameOfCell(nameInBase, j * nCol + i, numberCellDigit);
+				listTextureIn[j * nCol + i] = Resources.Load<Texture2D>(path);
+			}
+		}
+	}
+
+
+	[ContextMenu("CombineCellToBigTexture")]
+	void CombineCellToBigTexture() {
+		LoadCellTextureInput();
+
+		Vec2Int cellSize = new Vec2Int(listTextureIn[0].width, listTextureIn[0].height);
+		Texture2D target = new Texture2D(cellSize.x * nCol, cellSize.y * nRow);
+		Vec2Int cellO = new Vec2Int(0, 0);
+		for (int i = 0; i < nCol; i++) {
+			for (int j = 0; j < nRow; j++) {
+				if (listTextureIn[j * nCol + i] != null) {
+					Vec2Int targetO = new Vec2Int(cellSize.x * i, cellSize.y * j);
+					TextureUtils.CopyFlipCell(origin: listTextureIn[j * nCol + i],
+						target: target,
+						originO: cellO,
+						targetO: targetO,
+						size: cellSize,
+						flipX: false, flipY: false);
+				}
+			}
+		}
+
+		string pathSave = System.IO.Path.Combine(Application.dataPath, nameOut + ".png");
+
+		System.IO.File.WriteAllBytes(pathSave, target.EncodeToPNG());
 	}
 
 
@@ -103,14 +156,14 @@ public class SplitTexture : MonoBehaviour {
 			Debug.LogError("rotate size from (" + originTexture.width + ", " + originTexture.height + ") to " + " (" + width + ", " + height + ")");
 		}
 		Texture2D targetTexture = new Texture2D(width, height);
-		Vec2Int sizeTarget = new Vec2Int(targetTexture.width / nCol, targetTexture.height / nCol);
+		Vec2Int sizeTarget = new Vec2Int(targetTexture.width / nCol, targetTexture.height / nRow);
 
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
 				targetTexture.SetPixel(i, j, Color.clear);
 			}
 		}
-
+			
 		for (int i = 0; i < nCol; i++) {
 			for (int j = 0; j < nRow; j++) {
 				// cell[j, i]
@@ -136,7 +189,7 @@ public class SplitTexture : MonoBehaviour {
 		int height = originTexture.height;
 
 		Texture2D targetTexture = new Texture2D(width, height);
-		Vec2Int sizeTarget = new Vec2Int(targetTexture.width / nCol, targetTexture.height / nCol);
+		Vec2Int sizeTarget = new Vec2Int(targetTexture.width / nCol, targetTexture.height / nRow);
 
 		for (int i = 0; i < width; i++) {
 			for (int j = 0; j < height; j++) {
@@ -211,7 +264,7 @@ public class SplitTexture : MonoBehaviour {
 				Texture2D targetTexture = new Texture2D(size.x, size.y);
 				TextureUtils.CopyFlipCell(originTexture, targetTexture, originO, targetO, size, false, false);
 
-				string pathSave = System.IO.Path.Combine(Application.dataPath, NameOfCell(nameOut, j*nCol + i));
+				string pathSave = System.IO.Path.Combine(Application.dataPath, NamePngOfCell(nameOut, j*nCol + i, numberCellDigit));
 				System.IO.File.WriteAllBytes(pathSave, targetTexture.EncodeToPNG());
 			}
 		}
@@ -219,12 +272,21 @@ public class SplitTexture : MonoBehaviour {
 	}
 
 
+	string NamePngOfCell(string baseName, int id, int length = 3) {
+		string form = "{0," + length + ":";
+		for (int i = 0; i < length; i++) {
+			form = form + "0";
+		}
+		form = form + "}";
+		return baseName + String.Format(form, id) + ".png";
+	}
+		
 	string NameOfCell(string baseName, int id, int length = 3) {
 		string form = "{0," + length + ":";
 		for (int i = 0; i < length; i++) {
 			form = form + "0";
 		}
 		form = form + "}";
-		return baseName + "_" + String.Format(form, id) + ".png";
+		return baseName + String.Format(form, id); 
 	}
 }

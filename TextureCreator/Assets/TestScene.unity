@@ -437,13 +437,24 @@ MonoBehaviour:
   nCol: 4
   nRow: 2
   rotType: 1
-  flipX: 0
+  flipX: 1
   flipY: 1
-  nameOut: teleport_cell
+  nameOut: teleport_cell_rot
   paddingLeft: 0
   paddingRight: 10
   paddingTop: 20
   paddingBotton: 0
+  numberCellDigit: 3
+  nameInBase: teleport_cell_
+  listTextureIn:
+  - {fileID: 2800000, guid: 31f4bb0ab9eac49c288bb88dae1b0a32, type: 3}
+  - {fileID: 2800000, guid: 24fb1a837bb8541c18935e3495a49785, type: 3}
+  - {fileID: 0}
+  - {fileID: 2800000, guid: 3df41220bae6846a18c388d99a512837, type: 3}
+  - {fileID: 2800000, guid: 4eab73a72ec7a4bfeaa343cf9760163e, type: 3}
+  - {fileID: 2800000, guid: 890dc70f6274b484c9d16e71c8edea14, type: 3}
+  - {fileID: 2800000, guid: eec4b77cea71d48529d4568acb84e579, type: 3}
+  - {fileID: 2800000, guid: 0848c798621d34b118115a237934988a, type: 3}
 --- !u!114 &1056995214
 MonoBehaviour:
   m_ObjectHideFlags: 0

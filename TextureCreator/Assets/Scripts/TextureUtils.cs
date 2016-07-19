@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Texture utils.
+/// 
+/// </summary>
 public class TextureUtils {
+
 
 	/// <summary>
 	/// Copies pixels from 1 cell of origin to 1 cell of target and flip it.
@@ -16,7 +21,7 @@ public class TextureUtils {
 	public static void CopyFlipCell(Texture2D origin, Texture2D target, Vec2Int originO, Vec2Int targetO, 
 		Vec2Int size, bool flipX, bool flipY) {
 		int ORI_Y_MAX = origin.height - 1;
-		int TAR_Y_MAX = target.height - 1 - targetO.y;
+		int TAR_Y_MAX = target.height - 1;// - targetO.y;
 
 		if (flipX) {
 			if (flipY) {
@@ -104,7 +109,7 @@ public class TextureUtils {
 	/// <param name="rotType">type of rotation: 0-90-180-270.</param>
 	public static void CopyRotateCell(Texture2D origin, Texture2D target, Vec2Int originO, Vec2Int targetO, Vec2Int size, Rotate rotType) {
 		int ORI_Y_MAX = origin.height - 1;
-		int TAR_Y_MAX = target.height - 1 - targetO.y;
+		int TAR_Y_MAX = target.height - 1;
 
 		switch (rotType) {
 		case Rotate.ROT_90:
